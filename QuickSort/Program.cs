@@ -72,9 +72,39 @@
 
                 if (i < j)//if the greather elements is on the left of the element
                 {
-
+                    //swap the element at index i with the element at index j
+                    swap(i, j);
+                    mov_count++;
                 }
              }
+            //j now contains the index of the last element in the sorted list
+            if (low < j)
+            {
+                //move the pivot to its correct position in the list
+                swap(low, j);
+                mov_count++;
+            }
+            //sort the list on the left of pivot using quick sort
+            q_sort(low, j);
+            //sort the list on the left of pivot using quick sort
+            q_sort(j + 1, high);
+        }
+        void display()
+        {
+            Console.WriteLine("\n=====================");
+            Console.WriteLine(" Sorted array elements ");
+            Console.WriteLine("\n=====================");
+
+            for (int j = 0; j < n; j++)
+            {
+                Console.WriteLine(arr[j]);
+            }
+            Console.WriteLine("\nNumber of comparisons : ");
+            Console.WriteLine("\nNumber of data movements : ");
+        }
+        int getSize()
+        {
+            return (n);
         }
         static void Main(string[] args)
         {
