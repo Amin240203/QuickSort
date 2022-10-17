@@ -108,7 +108,18 @@
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //Declaring the object of the class
+            Program myList = new Program();
+            //Accept array elemts
+            myList.read();
+            //Calling the sorting funcyion
+            //first call to quick sort Alogarithm
+            myList.q_sort(0, myList.getSize() - 1);
+            //display sorted array
+            myList.display();
+            //to exit from the console
+            Console.WriteLine("\nPress Enter to exit");
+            Console.Read();
         }
     }
 }
